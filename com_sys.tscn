@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ols6yetnbjcw"]
+
+[ext_resource type="Script" path="res://TreeDraw.cs" id="1_f4rdc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TreeDraw" type="Node2D" parent="."]
+position = Vector2(518, 132)
+script = ExtResource("1_f4rdc")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 25.0
+offset_top = 33.0
+offset_right = 810.0
+offset_bottom = 78.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 853.0
+offset_top = 20.0
+offset_right = 1064.0
+offset_bottom = 80.0
+text = "Calculate"
+
+[connection signal="button_down" from="Button" to="TreeDraw" method="DrawATreeCallback"]

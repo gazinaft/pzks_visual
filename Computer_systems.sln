@@ -1,0 +1,27 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Computer_systems", "Computer_systems.csproj", "{AA99CC5F-DCB6-4399-86A8-7F74DA7BC99F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PZKS", "..\..\KPI\PZKS\PZKS\PZKS.csproj", "{4914B8CD-C05B-4FCF-B6B4-7340BC0DBB6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA99CC5F-DCB6-4399-86A8-7F74DA7BC99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA99CC5F-DCB6-4399-86A8-7F74DA7BC99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA99CC5F-DCB6-4399-86A8-7F74DA7BC99F}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{AA99CC5F-DCB6-4399-86A8-7F74DA7BC99F}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{AA99CC5F-DCB6-4399-86A8-7F74DA7BC99F}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{AA99CC5F-DCB6-4399-86A8-7F74DA7BC99F}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{4914B8CD-C05B-4FCF-B6B4-7340BC0DBB6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4914B8CD-C05B-4FCF-B6B4-7340BC0DBB6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4914B8CD-C05B-4FCF-B6B4-7340BC0DBB6C}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4914B8CD-C05B-4FCF-B6B4-7340BC0DBB6C}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{4914B8CD-C05B-4FCF-B6B4-7340BC0DBB6C}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{4914B8CD-C05B-4FCF-B6B4-7340BC0DBB6C}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
