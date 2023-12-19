@@ -150,7 +150,8 @@ public partial class TreeDraw : Node2D
 		QueueRedraw();
 	}
 	
-	/* 1) a+b+c+d+e+f+g+h
+	/*
+	1) a+b+c+d+e+f+g+h
 	2) a-b-c-d-e-f-g-h
 	3) a+(b+c+d+(e+f)+g)+h
 	4) a-((b-c-d)-(e-f)-g)-h
