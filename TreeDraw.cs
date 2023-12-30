@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PZKS;
+using PZKS.MatrixSystem;
 using PZKS.Parser;
 using PZKS.Validation;
 
@@ -39,13 +40,14 @@ public partial class TreeDraw : Node2D
 		
 		var squashed = Util.TransformPreTree(tokens);
 		TreeToDraw = _parser.CreateTree(squashed);
-		_balancer.BalanceMinusOrDiv(ref TreeToDraw, TokenType.Minus);
-		_balancer.BalanceMinusOrDiv(ref TreeToDraw, TokenType.Div);
-		_balancer.BalancePlusOrMult(ref TreeToDraw, TokenType.Plus);
-		_balancer.BalancePlusOrMult(ref TreeToDraw, TokenType.Mult);
-
-		
-		ConstructDrawingTree(TreeToDraw, -350, (Position.X * 2) + 350, Position);
+		var sysEval = new SystemEvaluator(TreeToDraw);
+		GD.Print(sysEval.GetAllStats());
+		var matrixSystem = sysEval.GetOptimalSystem();
+		GD.Print("====================================");
+		GD.Print("The best execution");
+		GD.Print("====================================");
+		GD.Print(matrixSystem.ToString());
+		ConstructDrawingTree(TreeToDraw, -380, (Position.X * 2) + 380, Position);
 	}
 	
 	private void ConstructDrawingTree(ExpressionNode node, float leftLimit, float rightLimit, Vector2 currentCoordinates)
