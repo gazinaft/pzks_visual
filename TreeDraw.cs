@@ -23,6 +23,8 @@ public partial class TreeDraw : Node2D
 	private Balancer _balancer;
 	private ValidatorStateMachine _validator;
 	private Distributor _distributor;
+	private List<ExpressionNode> _treeForms;
+	private int _treeFormsIndex = 0;
 	public void DrawATreeCallback()
 	{
 		var rawText = _textEdit.Text;
@@ -41,15 +43,26 @@ public partial class TreeDraw : Node2D
 		
 		var squashed = Util.TransformPreTree(tokens);
 		TreeToDraw = _parser.CreateTree(squashed);
-		_distributor.Distribute(ref TreeToDraw);   
-		// var sysEval = new SystemEvaluator(TreeToDraw);
-		// GD.Print(sysEval.GetAllStats());
-		// var matrixSystem = sysEval.GetOptimalSystem();
-		// GD.Print("====================================");
-		// GD.Print("The best execution");
-		// GD.Print("====================================");
-		// GD.Print(matrixSystem.ToString());
+		var sysEval = new SystemEvaluator(TreeToDraw);
+		GD.Print(sysEval.GetAllStats());
+		var matrixSystem = sysEval.GetOptimalSystem();
+		GD.Print("====================================");
+		GD.Print("The best execution");
+		GD.Print(matrixSystem.Label);
+		GD.Print("====================================");
+		GD.Print(matrixSystem.ToString());
+		TreeToDraw = matrixSystem.GetTree();
 		ConstructDrawingTree(TreeToDraw, -380, (Position.X * 2) + 380, Position);
+	}
+
+	public void DrawNextTree()
+	{
+		ConstructDrawingTree(_treeForms[_treeFormsIndex], -380, (Position.X * 2) + 380, Position);
+		_treeFormsIndex++;
+		if (_treeFormsIndex == _treeForms.Count)
+		{
+			_treeFormsIndex = 0;
+		}
 	}
 	
 	private void ConstructDrawingTree(ExpressionNode node, float leftLimit, float rightLimit, Vector2 currentCoordinates)

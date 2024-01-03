@@ -21,4 +21,12 @@ offset_right = 1064.0
 offset_bottom = 80.0
 text = "Calculate"
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 953.0
+offset_top = 93.0
+offset_right = 1063.0
+offset_bottom = 134.0
+text = "Next form"
+
 [connection signal="button_down" from="Button" to="TreeDraw" method="DrawATreeCallback"]
+[connection signal="button_down" from="Button2" to="TreeDraw" method="DrawNextTree"]
